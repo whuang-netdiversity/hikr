@@ -1,5 +1,11 @@
-# hikr
+# hikr Tutorial
 Pronounced "hiker" (/ˈhaɪkə(r)/), hikr is a basic hike-tracking app.
+
+## Forked for Educational Purposes
+Using the original hikr app as basis for my own tutorial.  For homework, I added the following assignments.
+1. Add swipe gesture for a hike is selected for a delete action
+2. Add delete action business logic to the swipe gesture
+3. Create a new hike page to add a new hike
 
 ![Screen cap](https://github.com/fusetools/hikr/blob/master/hikr.gif)
 

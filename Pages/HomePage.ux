@@ -1,9 +1,14 @@
 <hikr.Page ux:Class="HomePage">
 	<Router ux:Dependency="router" />
 
-	<JavaScript File="HomePage.js" />
+	<JavaScript File="Routes/HomePage.js" />
 
 	<DockPanel>
+		<!--
+		<Grid ColumnCount="1" Dock="Bottom">
+			<hikr.Button Text="Add Hike" Clicked="{goToAddHikePage}" />
+		</Grid>
+		-->
 		<hikr.Text FontSize="30" TextAlignment="Center" Dock="Top" Margin="0,50">Recent Hikes</hikr.Text>
 
 		<ScrollView>
@@ -11,18 +16,38 @@
 				<Rectangle ux:Class="Separator" Height="1" Fill="#fff4" />
 
 				<Each Items="{hikes}">
+
+					<Panel>
+
+						<StackPanel Orientation="Horizontal" ux:Name="TheItem" Clicked="{goToHike}">
+							<SolidColor Color="#ffff" ux:Name="BackFill" />
+
+							<hikr.Label Value="{name}" Margin="20" />
+<!--
+							<WhilePressed>
+								<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+							</WhilePressed>
+-->
+						</StackPanel>
+
+						<Panel Alignment="Right" Background="0.5,0.1,0.1,1" Clicked="{remove}" ux:Name="DeleteNode">
+							<StackPanel Alignment="Center">
+								<!--<Image File="cancel.png" Color="1,1,1,1" StretchMode="PixelPrecise"/>-->
+								<hikr.Text Margin="20,0,20,0" Alignment="Center" Value="Delete" Color="1,1,1,1" />
+							</StackPanel>
+						</Panel>
+						<SwipeGesture Direction="Left" LengthNode="DeleteNode" ux:Name="DeleteSwipe" Type="Active" />
+						<SwipingAnimation Source="DeleteSwipe">
+							<Move Target="TheItem" X="-1" RelativeTo="Size" RelativeNode="DeleteNode" />
+						</SwipingAnimation>
+						<Swiped Source="DeleteSwipe" How="ToInactive">
+							<Change BackFill.Color="0.9,1,0.9,1" Duration="0.2" />
+						</Swiped>
+
+					</Panel>
 					<Separator />
 
-					<Panel HitTestMode="LocalBoundsAndChildren" Clicked="{goToHike}">
-						<hikr.Text Value="{name}" Margin="20" />
-
-						<WhilePressed>
-							<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
-						</WhilePressed>
-					</Panel>
 				</Each>
-
-				<Separator />
 			</StackPanel>
 		</ScrollView>
 	</DockPanel>

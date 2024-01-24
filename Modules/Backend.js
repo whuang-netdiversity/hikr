@@ -1,3 +1,22 @@
+var FileSystem = require("FuseJS/FileSystem");
+var path = FileSystem.dataDirectory + "/" + "data.json";
+
+/*
+FileSystem.writeTextToFile(path, "hello world")
+    .then(() => {
+        return FileSystem.readTextFromFile(path);
+    })
+    .then((text) => {
+        console.log("The read file content was: " + text);
+    })
+    .catch((error) => {
+        console.log("Unable to read file due to error:" + error);
+    });
+*/
+
+/*
+ * Mock data
+ */
 var hikes = [
 	{
 		id: 0,
@@ -41,17 +60,24 @@ var hikes = [
 	}
 ];
 
-function getHikes() {
-	return new Promise(function(resolve, reject) {
-		setTimeout(function() {
+/*
+ * Get array from datastore to load unto device
+ */
+function loadHikes() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
 			resolve(hikes);
 		}, 0);
 	});
 }
 
+/*
+ * Push array to the datastore
+ */
 function updateHike(id, name, location, distance, rating, comments) {
-	return new Promise(function(resolve, reject) {
-		setTimeout(function() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			/* TODO update to datastore
 			for (var i = 0; i < hikes.length; i++) {
 				var hike = hikes[i];
 				if (hike.id == id) {
@@ -63,6 +89,7 @@ function updateHike(id, name, location, distance, rating, comments) {
 					break;
 				}
 			}
+			*/
 
 			resolve();
 		}, 0);
@@ -70,6 +97,6 @@ function updateHike(id, name, location, distance, rating, comments) {
 }
 
 module.exports = {
-	getHikes: getHikes,
+	loadHikes: loadHikes,
 	updateHike: updateHike
 };
