@@ -9,6 +9,7 @@
 			<SplashPage ux:Template="splash" router="router" />
 			<HomePage ux:Template="home" router="router" />
 			<EditHikePage ux:Template="editHike" router="router" />
+			<AddHikePage ux:Template="addHike" router="router" />
 		</Navigator>
 	</ClientPanel>
 </App>
