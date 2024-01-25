@@ -4,11 +4,11 @@
 	<JavaScript File="Routes/HomePage.js" />
 
 	<DockPanel>
-		<!--
+		
 		<Grid ColumnCount="1" Dock="Bottom">
-			<hikr.Button Text="Add Hike" Clicked="{goToAddHikePage}" />
+			<hikr.Button Text="Add Hike" Clicked="{goToAddHike}" />
 		</Grid>
-		-->
+		
 		<hikr.Text FontSize="30" TextAlignment="Center" Dock="Top" Margin="0,50">Recent Hikes</hikr.Text>
 
 		<ScrollView>
