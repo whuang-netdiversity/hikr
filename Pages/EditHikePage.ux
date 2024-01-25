@@ -11,7 +11,6 @@
 
 		<ScrollView>
 			<StackPanel ItemSpacing="10" Padding="10">
-				<hikr.Text ux:Class="TitleText" Opacity=".6" Margin="0,0,0,5" />
 
 				<StackPanel>
 					<TitleText>Name:</TitleText>
