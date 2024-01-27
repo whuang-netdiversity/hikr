@@ -1,21 +1,5 @@
-var FileSystem = require("FuseJS/FileSystem");
-var path = FileSystem.dataDirectory + "/" + "data.json";
-
 /*
-FileSystem.writeTextToFile(path, "hello world")
-    .then(() => {
-        return FileSystem.readTextFromFile(path);
-    })
-    .then((text) => {
-        console.log("The read file content was: " + text);
-    })
-    .catch((error) => {
-        console.log("Unable to read file due to error:" + error);
-    });
-*/
-
-/*
- * Mock data
+ * Mock data array (javascript datatype)
  */
 var hikes = [
 	{
@@ -72,7 +56,18 @@ function loadHikes() {
 }
 
 /*
- * Push array to the datastore
+ * Push array to the datastore (http POST)
+ */
+function addHike(id, name, location, distance, rating, comments) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve();
+		}, 0);
+	});
+}
+
+/*
+ * Push array to the datastore (http PUT)
  */
 function updateHike(id, name, location, distance, rating, comments) {
 	return new Promise((resolve, reject) => {
@@ -98,5 +93,6 @@ function updateHike(id, name, location, distance, rating, comments) {
 
 module.exports = {
 	loadHikes: loadHikes,
-	updateHike: updateHike
+	updateHike: updateHike,
+	addHike, addHike
 };
