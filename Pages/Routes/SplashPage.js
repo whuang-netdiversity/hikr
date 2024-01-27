@@ -1,3 +1,6 @@
+/*
+ * Home page route
+ */
 function goToHomePage() {
 	router.goto("home");
 }
