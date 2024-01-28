@@ -1,5 +1,26 @@
-# hikr
+# hikr Tutorial
 Pronounced "hiker" (/ˈhaɪkə(r)/), hikr is a basic hike-tracking app.
+
+## Forked for Educational Purposes
+Using the original hikr app as basis for my own tutorial.  For homework, I added the following assignments.
+1. Add swipe gesture for a hike is selected for a delete action
+2. Add delete action business logic to the swipe gesture
+3. Create a new hike page to add a new hike
+
+## Couple of things I learned from this exercise
+1. When I cloned the editHike page it complained about TitleText already defined
+   1. Moved TitleText into a component and reused that on editHike and addHike pages
+2. I separated all [page].JS files into a separate Routes folder for better readability
+3. The delete gesture was actually taken from the to-do example app
+4. Knowing that observables and arrays behave differently in the app
+   1. Observables respond to changes in data whereas arrays do not
+   2. Observables have an API that is a subset of the array methods
+   3. Arrays are easier to use and found it easier to convert to an array
+5. Refactored some of the code to use EMCAScript 6 styling
+## Some remarks
+1. It appears that backend.js has stub functions and don't actually update any database
+2. Var were replaced in functions to const since var has a global meaning
+3. Some names of functions were renamed that were causing confusion
 
 ![Screen cap](https://github.com/fusetools/hikr/blob/master/hikr.gif)
 

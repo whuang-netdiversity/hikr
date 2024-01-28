@@ -1,3 +1,6 @@
+/*
+ * Mock data array (javascript datatype)
+ */
 var hikes = [
 	{
 		id: 0,
@@ -41,17 +44,35 @@ var hikes = [
 	}
 ];
 
-function getHikes() {
-	return new Promise(function(resolve, reject) {
-		setTimeout(function() {
+/*
+ * Get array from datastore to load unto device
+ */
+function loadHikes() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
 			resolve(hikes);
 		}, 0);
 	});
 }
 
+/*
+ * Push array to the datastore (http POST)
+ */
+function addHike(id, name, location, distance, rating, comments) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve();
+		}, 0);
+	});
+}
+
+/*
+ * Push array to the datastore (http PUT)
+ */
 function updateHike(id, name, location, distance, rating, comments) {
-	return new Promise(function(resolve, reject) {
-		setTimeout(function() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			/* TODO update to datastore
 			for (var i = 0; i < hikes.length; i++) {
 				var hike = hikes[i];
 				if (hike.id == id) {
@@ -63,6 +84,7 @@ function updateHike(id, name, location, distance, rating, comments) {
 					break;
 				}
 			}
+			*/
 
 			resolve();
 		}, 0);
@@ -70,6 +92,7 @@ function updateHike(id, name, location, distance, rating, comments) {
 }
 
 module.exports = {
-	getHikes: getHikes,
-	updateHike: updateHike
+	loadHikes: loadHikes,
+	updateHike: updateHike,
+	addHike, addHike
 };
