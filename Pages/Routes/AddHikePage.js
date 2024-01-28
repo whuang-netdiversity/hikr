@@ -12,6 +12,13 @@ var comments = hike.map(current => current.comments);
  * Cancel action
  */
 function cancel() {
+	// Clear values
+	name.value = null;
+	location.value = null;
+	distance.value = null;
+	rating.value = null;
+	comments.value = null;
+
 	Context.showLog();
 	router.goBack();
 }

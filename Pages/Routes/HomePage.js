@@ -13,7 +13,7 @@ function goToAddHike() {
  * Edit page route
  */
 function goToHike(arg) {
-	var hike = arg.data;
+	const hike = arg.data;
 	router.push("editHike", hike);
 }
 
@@ -21,7 +21,7 @@ function goToHike(arg) {
  * Remove action
  */
 function remove(arg) {
-	var hike = arg.data;
+	const hike = arg.data;
 	Context.deleteHike(hike.id);
 	router.push("home");
 }
